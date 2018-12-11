@@ -136,10 +136,11 @@ limitations under the License.
           var providerData = user.providerData;
           var everything;
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-          /*var everything = "<div class='container'>";
+          <script src="javascripts/dogs.js"></script>
+          var everything = "<div class='container'>";
           everything += "<div class='jumbotron'>";
           everything += "<h1>DOGS</h1>";
           everything += "<br>";
@@ -152,12 +153,11 @@ limitations under the License.
           everything += "";
           everything += "</div>";
           everything += "</div>";
-*/
-          document.getElementById('toggleVisibility').style.display = "inline";
+
+          document.getElementById('quickstart-sign-in-status').innerHTML = everything;
           // [END_EXCLUDE]
         }
         else {
-          document.getElementById('toggleVisibility').style.display = "none";
           // User is signed out.
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
@@ -183,14 +183,14 @@ limitations under the License.
 </head>
 
 <body>
-
+  
   <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
     <!-- Header section containing title -->
     <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
       <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
         <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
-          <h3>Good Luck With Finals</h3>
+          <h3>Notes</h3>
         </div>
       </div>
     </header>
@@ -208,31 +208,13 @@ limitations under the License.
             <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in with GitHub</button>
 
             <br>
-            <br>
 
 
 
 
             <!-- Container where we'll display the user details -->
-
-
-            <div id="toggleVisibility">
-              <div class="container">
-                <div class="jumbotron">
-                  <p>Need a bit of happiness?</p>
-                  <br>
-                  <button type="button" class="btn btn-primary btn-block" id="btn">YES</button>
-                  <button type="button" class="btn btn-primary btn-block">NO</button>
-                  <br>
-                  <br>
-                  <p id="dogs"></p>
-                  <script type="text/javascript" src="javascripts/dogs.js"></script>
-                </div>
-              </div>
-            </div>
-
+            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
             <div class="invisible">
-              Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
               <div class="quickstart-user-details-container">
 
                 <div>Firebase auth <code>currentUser</code> object value:</div>
